@@ -1,0 +1,29 @@
+PS go-functions-custom-handler> go build
+PS go-functions-custom-handler> func start
+Can't determine project language from files. Please use one of [--csharp, --javascript, --typescript, --java, --python, --powershell, --custom]
+Can't determine project language from files. Please use one of [--csharp, --javascript, --typescript, --java, --python, --powershell, --custom]
+Can't determine project language from files. Please use one of [--csharp, --javascript, --typescript, --java, --python, --powershell, --custom]
+
+Azure Functions Core Tools
+Core Tools Version:       3.0.2996 Commit hash: c54cdc36323e9543ba11fb61dd107616e9022bba
+Function Runtime Version: 3.0.14916.0
+
+Can't determine project language from files. Please use one of [--csharp, --javascript, --typescript, --java, --python, --powershell, --custom]
+Can't determine project language from files. Please use one of [--csharp, --javascript, --typescript, --java, --python, --powershell, --custom]
+[2020-11-17T05:18:28.255Z] FUNCTIONS_CUSTOMHANDLER_PORT: 61083
+[2020-11-17T05:18:28.257Z] Go server Listening...on FUNCTIONS_CUSTOMHANDLER_PORT: 61083
+
+Functions:
+
+        SimpleHttpTrigger: [GET,POST] http://localhost:7071/api/SimpleHttpTrigger
+
+For detailed output, run func with --verbose flag.
+[2020-11-17T05:18:28.727Z] Worker process started and initialized.
+[2020-11-17T05:18:33.283Z] Host lock lease acquired by instance ID '0000000000000000000000000FD4161F'.
+[2020-11-17T05:18:33.621Z] Executing 'Functions.SimpleHttpTrigger' (Reason='This function was programmatically called via the host APIs.', Id=2982be63-9441-4b0f-8e80-ecf75801958a)
+[2020-11-17T05:18:33.681Z] November
+[2020-11-17T05:18:33.683Z] 17
+[2020-11-17T05:18:33.687Z] 2020
+[2020-11-17T05:18:33.688Z] user agent is: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0 Azure-Functions-Host/3.0.14916.0
+[2020-11-17T05:18:33.689Z] invocationid is: 2982be63-9441-4b0f-8e80-ecf75801958a
+[2020-11-17T05:18:33.697Z] Executed 'Functions.SimpleHttpTrigger' (Succeeded, Id=2982be63-9441-4b0f-8e80-ecf75801958a, Duration=86ms)

@@ -1,0 +1,30 @@
+PS go-functions-custom-handler> az login
+You have logged in. Now let us find all the subscriptions to which you have access...
+The following tenants don't contain accessible subscriptions. Use 'az login --allow-no-subscriptions' to have tenant level access.
+a0b27dd1-b805-4308-b2dc-5e09e3dba675
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "************************************",
+    "id": "************************************",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Azure",
+    "state": "Enabled",
+    "tenantId": "************************************",
+    "user": {
+      "name": "************************************",
+      "type": "user"
+    }
+  }
+]
+PS go-functions-custom-handler> func azure functionapp publish <azure-functionapp-resourcename>
+Getting site publishing info...
+Creating archive for current directory...
+Uploading 3.16 MB [###############################################################################]
+Upload completed successfully.
+Deployment completed successfully.
+Syncing triggers...
+Functions in <azure-functionapp-resourcename>:
+    SimpleHttpTrigger - [httpTrigger]
+        Invoke url: https://<azure-functionapp-resourcename>.azurewebsites.net/api/simplehttptrigger?code=*******************************************
