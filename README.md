@@ -1,4 +1,4 @@
-# Go Functions Cstom Handler
+# Go Functions Custom Handler
 
 ## build & run
 
