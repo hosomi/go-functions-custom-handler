@@ -29,6 +29,20 @@ PS go-functions-custom-handler> func azure functionapp publish <azure-functionap
 
 [log](deploy.log)  
 
+---
+
+## http trigger
+
 https://<azure-functionapp-resourcename>/api/SimpleHttpTrigger?code=*************************************************
 
+## queue trigger
 
+* QueueName: input-message  
+* Message:
+
+```json
+{
+    "Id": 1,
+    "Name": "aaa"
+}
+```
