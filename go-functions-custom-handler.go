@@ -33,6 +33,12 @@ type InvokeRequest struct {
 	Data map[string]interface{}
 }
 
+type InvokeResponse struct {
+	Outputs     map[string]interface{} // function.json ファイルの bindings 配列によって定義される応答値。
+	Logs        []string               // Functions の呼び出しログとして表示するメッセージ。
+	ReturnValue interface{}            // レスポンス本文。(function.json ファイルの $return として出力が構成されている場合)
+}
+
 type User struct {
 	Id   int
 	Name string
@@ -55,10 +61,21 @@ func queueTriggerHandler(w http.ResponseWriter, r *http.Request) {
 	u := new(User)
 	err := json.Unmarshal([]byte(s), u)
 	if err != nil {
-		log.Fatal(err)
+		http.Error(w, decodeErr.Error(), http.StatusBadRequest)
 	}
 	fmt.Printf("%+v\n", u)
 	fmt.Println("id:", u.Id, "name:", u.Name)
+
+	// direction: "out" を一つ以上定義しないとカスタムハンドラーは成功しても Functions はタイムアウトでエラーになる。
+	invokeResponse := InvokeResponse{Logs: []string{"success"}}
+	js, err := json.Marshal(invokeResponse)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(js)
 }
 
 func main() {
