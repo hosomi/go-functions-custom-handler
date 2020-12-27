@@ -120,9 +120,13 @@ func imageHalf(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// emulator
+	// Azure
 	URL, _ := url.Parse(
-		fmt.Sprintf("http://127.0.0.1:10000/%s/%s", accountName, ih.Container))
+		fmt.Sprintf("https://%s.blob.core.windows.net/%s", accountName, ih.Container))
+
+	// emulator
+	// URL, _ := url.Parse(
+	// 	fmt.Sprintf("http://127.0.0.1:10000/%s/%s", accountName, ih.Container))
 
 	// fmt.Println("URL", URL)
 
