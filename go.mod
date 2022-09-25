@@ -1,6 +1,6 @@
 module hosomi/go-functions-custom-handler
 
-go 1.15
+go 1.19
 
 require (
 	github.com/Azure/azure-storage-blob-go v0.14.0
